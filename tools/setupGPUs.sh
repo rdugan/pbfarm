@@ -126,6 +126,9 @@ do
   fi
 done
 
+# wake GPUs up before anything else
+./wake_gpus.sh
+
 # NOTE: amdmemtweak and atitool use contiguous instance IDs, all other tools
 #       use DRM IDs, which may not be contiguous due to the presence of 
 #       non-AMDGPU devices
