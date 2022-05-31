@@ -1,0 +1,101 @@
+{
+    "algo": "ethash",
+    "configDefaults": {
+        "hashrateTarget": 52,
+        "pptFile": "${INSTANCE_ID}_${COIN}_${HR_TARGET}.bin.ppt",
+        "states": {
+            "core": 3,
+            "mem": 3,
+            "soc": 3
+        },
+        "origtimings": {
+            "rc": 39,
+            "ras": 27,
+            "rp": 12,
+            "rcdrd": 13,
+            "rrds": 4,
+            "rrdl": 5,
+            "rtp": 5,
+            "faw": 13,
+            "ref": 3120,
+            "rfcpb": 128,
+            "rfc": 208
+        },
+        "timings": {
+            "rc": 37,
+            "rp": 9,
+            "rcdrd": 12,
+            "rrds": 3,
+            "rrdl": 3,
+            "faw": 12,
+            "ref": 20000,
+            "rfc": 250
+        },
+        "voltages": {
+            "vddcr_hbm": 1.218
+        }
+    },
+    "devices": [
+        {
+            "id": 0,
+            "busID": "04.00.0",
+            "vendor": "AMD",
+            "arch": "Vega 10",
+            "config": {
+                "voltages": {
+                    "vddcr_hbm": 1.231
+                }
+            }
+        },
+        {
+            "id": 1,
+            "busID": "07.00.0",
+            "vendor": "AMD",
+            "arch": "Vega 10"
+        },
+        {
+            "id": 2,
+            "busID": "0a.00.0",
+            "vendor": "AMD",
+            "arch": "Vega 10"
+        },
+        {
+            "id": 3,
+            "busID": "0d.00.0",
+            "vendor": "AMD",
+            "arch": "Vega 10",
+            "config": {
+                "timings": {
+                    "rcdrd": 12
+                },
+                "voltages": {
+                    "vddcr_hbm": 1.243
+                }
+            }
+        },
+        {
+            "id": 4,
+            "busID": "10.00.0",
+            "vendor": "AMD",
+            "arch": "Vega 10"
+        },
+        {
+            "id": 5,
+            "busID": "13.00.0",
+            "vendor": "AMD",
+            "arch": "Vega 10"
+        },
+        {
+            "id": 6,
+            "busID": "16.00.0",
+            "vendor": "AMD",
+            "arch": "Vega 10"
+        },
+        {
+            "id": 7,
+            "busID": "19.00.0",
+            "vendor": "AMD",
+            "arch": "Vega 10"
+        }
+    ]
+}
