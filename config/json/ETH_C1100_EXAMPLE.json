@@ -1,0 +1,150 @@
+{
+    "algo": "ethash",
+    "configDefaults": {
+        "hashrateTarget": 77,
+        "clocks": {
+            "fpga_clock_core": 635,
+            "fpga_clock_mem": 1255
+        },
+        "voltages": {
+            "fpga_vcc_int": 700,
+            "fpga_vcc_bram": 870,
+            "fpga_vcc_mem": 1170
+        }
+    },
+    "devices": [
+        {
+            "id": 0,
+            "DNA": "40020000013abfc44d004205",
+            "vendor": "Xilinx",
+            "arch": "C1100"
+        },
+        {
+            "id": 1,
+            "DNA": "40020000013abfc44d006105",
+            "vendor": "Xilinx",
+            "arch": "C1100",
+            "config": {
+                "voltages": {
+                    "fpga_vcc_int": 715,
+                    "fpga_vcc_bram": 890
+                }
+            }
+        },
+        {
+            "id": 2,
+            "DNA": "40020000013abfc44d008505",
+            "vendor": "Xilinx",
+            "arch": "C1100",
+            "config": {
+                "voltages": {
+                    "fpga_vcc_int": 725,
+                    "fpga_vcc_bram": 900
+                }
+            }
+        },
+        {
+            "id": 3,
+            "DNA": "40020000013abfc44d00a2c5",
+            "vendor": "Xilinx",
+            "arch": "C1100",
+            "config": {
+                "voltages": {
+                    "fpga_vcc_int": 725,
+                    "fpga_vcc_bram": 915,
+                    "fpga_vcc_mem": 1180
+                }
+            }
+        },
+        {
+            "id": 4,
+            "DNA": "40020000013abfc44d00a505",
+            "vendor": "Xilinx",
+            "arch": "C1100",
+            "config": {
+                "voltages": {
+                    "fpga_vcc_int": 730,
+                    "fpga_vcc_bram": 915,
+                    "fpga_vcc_mem": 1180
+                }
+            }
+        },
+        {
+            "id": 5,
+            "DNA": "40020000013abfc44d00c3c5",
+            "vendor": "Xilinx",
+            "arch": "C1100",
+            "config": {
+                "voltages": {
+                    "fpga_vcc_bram": 900,
+                    "fpga_vcc_mem": 1180
+                }
+            }
+        },
+        {
+            "id": 6,
+            "DNA": "40020000013abfc44d102105",
+            "vendor": "Xilinx",
+            "arch": "C1100",
+            "config": {
+                "voltages": {
+                    "fpga_vcc_bram": 890,
+                    "fpga_vcc_mem": 1180
+                }
+            }
+        },
+        {
+            "id": 7,
+            "DNA": "40020000013abfc44d102205",
+            "vendor": "Xilinx",
+            "arch": "C1100"
+        },
+        {
+            "id": 8,
+            "DNA": "40020000013abfc44d10a205",
+            "vendor": "Xilinx",
+            "arch": "C1100",
+            "config": {
+                "voltages": {
+                    "fpga_vcc_mem": 1180
+                }
+            }
+        },
+        {
+            "id": 9,
+            "DNA": "40020000013ac2a20d606285",
+            "vendor": "Xilinx",
+            "arch": "C1100",
+            "config": {
+                "voltages": {
+                    "fpga_vcc_int": 730,
+                    "fpga_vcc_bram": 925,
+                    "fpga_vcc_mem": 1185
+                }
+            }
+        },
+        {
+            "id": 10,
+            "DNA": "40020000013aca034c90c505",
+            "vendor": "Xilinx",
+            "arch": "C1100",
+            "config": {
+                "voltages": {
+                    "fpga_vcc_int": 705,
+                    "fpga_vcc_bram": 915
+                }
+            }
+        },
+        {
+            "id": 11,
+            "DNA": "40020000013aca034cb063c5",
+            "vendor": "Xilinx",
+            "arch": "C1100",
+            "config": {
+                "voltages": {
+                    "fpga_vcc_bram": 895
+                }
+            }
+        }
+    ]
+}
