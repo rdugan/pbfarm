@@ -49,12 +49,24 @@ if [[ "$tableVersion" = "${PPT_IDS[Navi]}" || "$tableVersion" = "${PPT_IDS[VII]}
     printf "Mem Controller Voltage (mvddci):  %smV\n" $(( ${uppResults[3]} / 4 ))
   fi
 
+  fclkHeader="FCLK:"
   socclkHeader="SOCCLK:"
   sclkHeader="SCLK:"
   mclkHeader="MCLK:"
 
   readarray -t sclkList <<< "$(cat ${sysFSDev}/pp_dpm_sclk)"
   readarray -t mclkList <<< "$(cat ${sysFSDev}/pp_dpm_mclk)"
+
+  fclkFile="${sysFSDev}/pp_dpm_fclk"
+  if [ -f "$fclkFile" ];
+  then
+    readarray -t fclkList <<< "$(cat $fclkFile)"
+    printf "\n$fclkHeader\n"
+    for j in "${fclkList[@]}"
+    do
+      echo "$j"
+    done
+  fi
 
   socclkFile="${sysFSDev}/pp_dpm_socclk"
   if [ -f "$socclkFile" ];
