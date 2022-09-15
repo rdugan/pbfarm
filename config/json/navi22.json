@@ -1,0 +1,17 @@
+{
+    "mapType": "ppt",
+    "map": {
+        "clocks": {
+            "core": "/smc_pptable/FreqTableGfx/1",
+            "soc": "/smc_pptable/FreqTableSocclk/1",
+            "mem": "/smc_pptable/FreqTableUclk/3",
+            "fabric": "/smc_pptable/FreqTableFclk/1"
+        },
+        "voltages": {
+            "core": "/smc_pptable/MaxVoltageGfx",
+            "soc": "/smc_pptable/MaxVoltageSoc",
+            "mem": "/smc_pptable/MemMvddVoltage/3",
+            "controller": "/smc_pptable/MemVddciVoltage/3"
+        }
+    }
+}
