@@ -31,8 +31,14 @@
             "ref": 20000,
             "rfc": 250
         },
+        "clocks": {
+          "core": 900,
+          "mem": 960,
+          "soc": 960
+        },
         "voltages": {
-            "vddcr_hbm": 1.218
+          "core": 750,
+          "vddcr_hbm": 1.218
         }
     },
     "devices": [
@@ -69,6 +75,7 @@
                     "rcdrd": 12
                 },
                 "voltages": {
+                    "core": 775,
                     "vddcr_hbm": 1.243
                 }
             }
