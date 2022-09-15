@@ -10,11 +10,14 @@ name (e.g. 'eth'), and a hashrate target (e.g. '50').  For example:
 ```
 setupGPUs.sh 0,1 eth 50
 ```
-It will then consult a config file from the config/json directory with the name 
-'<COIN>_<HASHRATE>.json', or following the previous example, 'eth_50.json'.  An 
-example config file is provided in the config/json directory.  The script will
-perform much of the GPU configuration via PPT files - see the config/ppts/README 
-for more information.
+It will then consult a config file from the config/json directory with the name
+
+```
+<COIN>_<HASHRATE>.json
+```
+or following the previous example, 'eth_50.json'.  An example config file is
+provided in the config/json directory.  The script will perform much of the GPU
+configuration via PPT files - see the config/ppts/README for more information.
 
 Best practice would be to run this script (as root) before starting the miner.
 
