@@ -8,14 +8,6 @@ REMOTE_DIR="$HOME/google-drive/pdu_watchdog"
 REMOTE_FILE="${REMOTE_DIR}/selections"
 REMOTE_STATUS_LOG_FILE="${REMOTE_DIR}/status.log"
 
-declare -A SERVERS=(["PDU20_1"]="http://192.168.1.8" ["PDU30_1"]="http://192.168.1.9" ["PDU30_2"]="http://192.168.1.10")
-declare -A RIG_OUTLETS=(["Octo8.1"]="PDU30_2.13" ["Octo8.2"]="PDU20_1.4" ["Octo8.3"]="PDU20_1.8" ["Octo8.4"]="PDU20_1.7" ["Octo12.1"]="PDU30_2.9" ["Octo12.2"]="PDU30_2.1" ["Octo12.3"]="PDU30_2.2" ["Octo12.4"]="PDU30_1.8" ["Octo12.5"]="PDU30_1.15")
-declare -A OUTLET_ACTIONS=(["on"]=1 ["off"]=2 ["reboot"]=3)
-METERED="PDU30_1 PDU30_2"
-
-USERAGENT="User-Agent: Mozilla/5.0"
-COOKIEJAR="$EXEC_DIR/pdu_cookies.txt"
-
 declare -a selections
 if [ $# -ge 1 ]; then
   selections=($@)
@@ -26,6 +18,13 @@ else
 fi
 
 cd $(dirname $0)
+
+declare -A SERVERS=(["PDU20_1"]="http://192.168.1.8" ["PDU30_1"]="http://192.168.1.9" ["PDU30_2"]="http://192.168.1.10")
+declare -A RIG_OUTLETS=(["Octo8.1"]="PDU30_2.13" ["Octo8.2"]="PDU20_1.4" ["Octo8.3"]="PDU20_1.8" ["Octo8.4"]="PDU20_1.7" ["Octo12.1"]="PDU30_2.9" ["Octo12.2"]="PDU30_2.1" ["Octo12.3"]="PDU30_2.2" ["Octo12.4"]="PDU30_1.8" ["Octo12.5"]="PDU30_1.15")
+declare -A OUTLET_ACTIONS=(["on"]=1 ["off"]=2 ["reboot"]=3)
+METERED="PDU30_1 PDU30_2"
+USERAGENT="User-Agent: Mozilla/5.0"
+COOKIEJAR="$EXEC_DIR/pdu_cookies.txt"
 
 readarray -t credentials < $CREDENTIALS_FILE
 USERNAME="${credentials[0]}"
@@ -94,5 +93,9 @@ done
 for s in "${STATUS[@]}"; do
   s="$(date) ${s}"
   echo "$s" >> $STATUS_LOG_FILE
-  [[ "$mode" == "remote" ]] && echo "$s" >> $REMOTE_STATUS_LOG_FILE
+  if [[ "$mode" == "remote" ]]; then
+    # copy log output to remote log file, and clear selections
+    echo "$s" >> $REMOTE_STATUS_LOG_FILE
+    echo -n > $REMOTE_FILE
+  fi
 done
