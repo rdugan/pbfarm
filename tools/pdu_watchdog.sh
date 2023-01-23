@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# TODO: Move these to config file
 EXEC_DIR="/var/lib/pdu_watchdog"
 STATUS_LOG_FILE="$EXEC_DIR/status.log"
+DEBUG_LOG_FILE="$EXEC_DIR/debug.log"
 CREDENTIALS_FILE="$EXEC_DIR/credentials"
 REMOTE_DIR="$HOME/google-drive/pdu_watchdog"
 REMOTE_FILE="${REMOTE_DIR}/selections"
@@ -70,7 +70,7 @@ do
   else
     # login
     curl -s -o /dev/null -c $COOKIEJAR "${SERVERS[$pdu]}/login.html"
-    location=`curl -s -o /dev/null -w "%{redirect_url}" -c $COOKIEJAR -b $COOKIEJAR -H "Referer: $loginReferer" --data-urlencode "username=${USERNAME}" --data-urlencode "password=${PASSWORD}" "${SERVERS[$pdu]}/login.cgi"`
+    location=`curl -s -o /dev/null -w "%{redirect_url}" -c $COOKIEJAR -b $COOKIEJAR -H "Referer: $loginReferer" -G --data-urlencode "username=$USERNAME" --data-urlencode "password=$PASSWORD" "${SERVERS[$pdu]}/login.cgi"`
   fi
 
   # select outlet(s)
